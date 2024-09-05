@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,32 @@
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
     <form>
         <select name="Honapok" id="Honapok_select">
-            <option value="1">Január</option>
-            <option value="2">Február</option>
-            <option value="3">Március</option>
-            <option value="4">Április</option>
-            <option value="5">Május</option>
-            <option value="6">Június</option>
-            <option value="7">Július</option>
-            <option value="8">Augusztus</option>
-            <option value="9">Szeptember</option>
-            <option value="10">Oktober</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
+            <option value="Január">Január</option>
+            <option value="Február">Február</option>
+            <option value="Március">Március</option>
+            <option value="Április">Április</option>
+            <option value="Május">Május</option>
+            <option value="Június">Június</option>
+            <option value="Július">Július</option>
+            <option value="Augusztus">Augusztus</option>
+            <option value="Szeptember">Szeptember</option>
+            <option value="Október">Október</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
         </select>
+        <input type="button" value="Hónap kiválasztása" onclick="createTable()">
     </form>
 
-    <div class="calendar">
+    <div id="table-div"></div>
 
     </div>
 
 
 </body>
+
 </html>

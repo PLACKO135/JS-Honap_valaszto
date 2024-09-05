@@ -1,47 +1,42 @@
 "use strict";
 
-let button = document.querySelector('input[type="button"]');
-let calendar_div = document.getElementsByClassName("calendar");
-let honapok_select = document.getElementById("Honapok_select");
+const tableDiv = document.getElementById('table-div');
+const honapok_select = document.getElementById("Honapok_select");
 const honap = honapok_select.value;
 
-select.addEventListener('change', createTable);
-
-const monthLengths = {
-  January: 31,
-  February: 28,
-  March: 31,
-  April: 30,
-  May: 31,
-  June: 30,
-  July: 31,
-  August: 31,
-  September: 30,
-  October: 31,
-  November: 30,
-  December: 31
+const honaphossz = {
+  'Január': 31,
+  'Február': 28,
+  'Március': 31,
+  'Április': 30,
+  'Május': 31,
+  'Június': 30,
+  'Július': 31,
+  'Augusztus': 31,
+  'Szeptember': 30,
+  'Október': 31,
+  'November': 30,
+  'December': 31
 };
 
-function createTable() {
-    const rowAmount = monthLengths[honapok_select.value];
 
+
+function createTable() {
+
+  const valasztott_honap = honapok_select.value;
+  const maxnapok = honaphossz[valasztott_honap];
   const table = document.createElement('table');
 
-  for (let i = 0; i < rowAmount; i++) {
-    const row = document.createElement('tr');
-    table.appendChild(row);
-
-    for (let j = 0; j < 7; j++) {
-      const cell = document.createElement('td');
-      row.appendChild(cell);
-    }
+  for (let i = 1; i <= maxnapok; i++) {
+    const row = table.insertRow();
+    const dayCell = row.insertCell();
+    dayCell.innerHTML = i;
+    const inputCell = row.insertCell();
+    const input = document.createElement('input');
+    input.type = 'text';
+    inputCell.appendChild(input);
   }
-  calendar_div.appendChild(table);
+
+  tableDiv.innerHTML = '';
+  tableDiv.appendChild(table);
 }
-
-
-
-
-
-
-createTable();
